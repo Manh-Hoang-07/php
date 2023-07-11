@@ -55,6 +55,9 @@ ul.list-menu li a {
     margin-left: 5px;
     float: left;
 }
+.list-sidebar {
+    background: red;
+}
 .main-content {
     border: 1px solid #ff0000;
     height: 390px;

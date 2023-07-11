@@ -24,7 +24,13 @@
         </div>
         <div class="main" id="main">
             <div class="sidebar">
-                Sidebar
+                <ul class="list-sidebar">
+                    <li><a href="index.php">Ốp lưng</a></li>
+                    <li><a href="#">Tai nghe</a></li>
+                    <li><a href="#">Cục sạc</a></li>
+                    <li><a href="#">Tin tức</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                </ul>
             </div>
             <div class="main-content"></div>
         </div>
