@@ -44,7 +44,7 @@ ul.list-menu li a {
 }
 #main {
     border: 1px solid #00ff80;
-    height: 400px;
+    height: auto;
     width: 100%;
 }
 .sidebar {
@@ -55,16 +55,49 @@ ul.list-menu li a {
     margin-left: 5px;
     float: left;
 }
-.list-sidebar {
-    background: red;
+ul.list-sidebar {
+    padding: 0;
+    width: 100%;
+    list-style: none;
+    margin: 0 auto;
+}
+ul.list-sidebar li {
+    margin: 7px;
+    padding: 5px;
+}
+ul.list-sidebar li:hover {
+    background: #00cc99;
+}
+ul.list-sidebar li a {
+    color: cornflowerblue;
+    text-decoration: none;
+    text-align: left;
+    display: block;
 }
 .main-content {
     border: 1px solid #ff0000;
-    height: 390px;
+    height: auto;
     width: 78%;
     margin-top: 5px;
     margin-left: 5px;
     float: right;
+}
+ul.product-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+}
+ul.product-list li {
+    width: 17%;
+    margin: 5px;
+    padding: 5px;
+    border: 1px dashed #000000;
+    float: left;
+    background: darkgray;
+}
+ul.product-list li img {
+    width: 100%;
 }
 .clear {
     clear: both;

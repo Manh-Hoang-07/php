@@ -10,34 +10,12 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="header">
-
-        </div>
-        <div class="menu">
-            <ul class="list-menu">
-                <li><a href="index.php">Trang chủ</a></li>
-                <li><a href="#">Danh mục sản phẩm</a></li>
-                <li><a href="#">Giỏ hàng</a></li>
-                <li><a href="#">Tin tức</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </div>
-        <div class="main" id="main">
-            <div class="sidebar">
-                <ul class="list-sidebar">
-                    <li><a href="index.php">Ốp lưng</a></li>
-                    <li><a href="#">Tai nghe</a></li>
-                    <li><a href="#">Cục sạc</a></li>
-                    <li><a href="#">Tin tức</a></li>
-                    <li><a href="#">Liên hệ</a></li>
-                </ul>
-            </div>
-            <div class="main-content"></div>
-        </div>
-        <div class="clear"></div>
-        <div class="footer">
-            <p>footer</p>
-        </div>
+        <?php
+            include "pages/header.php";
+            include "pages/menu.php";
+            include "pages/main.php";
+            include "pages/footer.php";
+        ?>
     </div>
 </body>
 </html>
