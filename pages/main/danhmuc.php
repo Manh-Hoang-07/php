@@ -1,5 +1,5 @@
 <?php
-$sql_pro = "SELECT * FROM tbl_sanpham WHERE tbl_sanpham.id_danhmuc='$_GET[id]' ORDER BY id DESC";
+$sql_pro = "SELECT * FROM tbl_sanpham WHERE tbl_sanpham.id_danhmuc='$_GET[id]' ORDER BY id DESC LIMIT 25";
 $query_pro = mysqli_query($mysqli, $sql_pro);
 $sql_cate = "SELECT * FROM tbl_danhmuc WHERE tbl_danhmuc.id='$_GET[id]'";
 $query_cate = mysqli_query($mysqli, $sql_cate);

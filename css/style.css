@@ -8,6 +8,15 @@ body {
     width: 90%;
     margin: 0 auto;
 }
+.wrapper-chitiet {
+    height: 700px;
+    width: 90%;
+    margin: 0 auto;
+}
+.hinhanh-sanpham {
+    float: left;
+    width: 40%;
+}
 .header {
     background-image: url("../images/banner.jpg");
     background-repeat: no-repeat;
