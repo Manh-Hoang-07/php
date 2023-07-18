@@ -1,9 +1,13 @@
 <div class="sidebar">
     <ul class="list-sidebar">
-        <li><a href="index.php?quanly=danhmucsanpham&id=1">Ốp lưng</a></li>
-        <li><a href="index.php?quanly=danhmucsanpham&id=2">Tai nghe</a></li>
-        <li><a href="index.php?quanly=danhmucsanpham&id=3">Cục sạc</a></li>
-        <li><a href="index.php?quanly=danhmucsanpham&id=4">Dán màn hình</a></li>
-        <li><a href="index.php?quanly=danhmucsanpham&id=5">Liên hệ</a></li>
+        <?php
+        $sql_danhmuc = "SELECT * FROM tbl_danhmuc";
+        $query_danhmuc = mysqli_query($mysqli, $sql_danhmuc);
+        while ($row_danhmuc = mysqli_fetch_array($query_danhmuc)) {
+        ?>
+            <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['id'] ?? '' ?>"><?php echo $row_danhmuc['tendanhmuc'] ?? '' ?></a></li>
+        <?php
+        }
+        ?>
     </ul>
 </div>
