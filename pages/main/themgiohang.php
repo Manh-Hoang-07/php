@@ -19,31 +19,38 @@ if (isset($_POST['themgiohang'])) {
                 'masp' => $row['masp'] ?? '',
             ]
         ];
-        if (isset($_SESSION['cart'])) {
+        if (!empty($_SESSION['cart'])) {
+            $found = false;
             foreach ($_SESSION['cart'] as $cart_item) {
                 if (!empty($cart_item['id'])) {
                     if ($cart_item['id'] == $id) {
                         $products[] = [
-                            [
-                                'tensanpham' => $cart_item['tensanpham'] ?? '',
-                                'id' => $cart_item['id'],
-                                'soluong' => ((int)$cart_item['soluong'] ?? 0) + 1,
-                                'giasp' => $cart_item['giasp'] ?? '',
-                                'hinhanh' => $cart_item['hinhanh'] ?? '',
-                                'masp' => $cart_item['masp'] ?? '',
-                            ]
+                            'tensanpham' => $cart_item['tensanpham'] ?? '',
+                            'id' => $cart_item['id'],
+                            'soluong' => ((int)$cart_item['soluong'] ?? 0) + 1,
+                            'giasp' => $cart_item['giasp'] ?? '',
+                            'hinhanh' => $cart_item['hinhanh'] ?? '',
+                            'masp' => $cart_item['masp'] ?? '',
                         ];
+                        $found = true;
                     } else {
                         $products[] = $cart_item;
                     }
                 }
+            }
+            if (!$found) {
+                $products = array_merge($products ?? [], $new_product);
             }
             $_SESSION['cart'] = $products ?? [];
         } else {
             $_SESSION['cart'] = $new_product;
         }
     }
-    print_r($_SESSION['cart']);
-    //header('Location: index.php?quanly=giohang');
+    header('Location: ../../index.php?quanly=giohang');
+}
+
+if (!empty($_GET['xoatatca'])) {
+    unset($_SESSION['cart']);
+    header('Location: ../../index.php?quanly=giohang');
 }
 ?>

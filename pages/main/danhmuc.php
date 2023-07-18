@@ -11,7 +11,7 @@ $row_title = mysqli_fetch_array($query_cate);
     while ($row_pro = mysqli_fetch_array($query_pro)) {
     ?>
         <li>
-            <a href="">
+            <a href="index.php?quanly=sanpham&id=<?php echo $row_pro['id'] ?? '' ?>">
                 <img src="admincp/modules/quanlysp/uploads/<?php echo $row_pro['hinhanh'] ?? '' ?>">
                 <p class="title-product">Tên sản phẩm : <?php echo $row_pro['tensanpham'] ?? '' ?></p>
                 <p class="price-product">Giá sản phẩm : <?php echo $row_pro['giasp'] ?? '' ?></p>
