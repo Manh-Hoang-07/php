@@ -48,7 +48,48 @@ if (isset($_POST['themgiohang'])) {
     }
     header('Location: ../../index.php?quanly=giohang');
 }
-
+if (!empty($_SESSION['cart']) && isset($_GET['xoa'])) {
+    $id = $_GET['xoa'];
+    $products = [];
+    foreach ($_SESSION['cart'] as $cartItem) {
+        if (!empty($cartItem['id']) && $cartItem['id'] != $id) {
+            $products[] = $cartItem;
+        }
+    }
+    $_SESSION['cart'] = $products;
+    header('Location: ../../index.php?quanly=giohang');
+}
+if (!empty($_SESSION['cart']) && isset($_GET['cong'])) {
+    $id = $_GET['cong'];
+    $products = [];
+    foreach ($_SESSION['cart'] as $cartItem) {
+        if (!empty($cartItem['id'])) {
+            if ($cartItem['id'] == $id) {
+                $cartItem['soluong'] = ($cartItem['soluong'] ?? 0) + 1;
+            }
+            $products[] = $cartItem;
+        }
+    }
+    $_SESSION['cart'] = $products;
+    header('Location: ../../index.php?quanly=giohang');
+}
+if (!empty($_SESSION['cart']) && isset($_GET['tru'])) {
+    $id = $_GET['tru'];
+    $products = [];
+    foreach ($_SESSION['cart'] as $cartItem) {
+        if (!empty($cartItem['id'])) {
+            if ($cartItem['id'] == $id) {
+                $cartItem['soluong'] = ($cartItem['soluong'] ?? 0) - 1;
+            }
+            if ($cartItem['soluong'] <= 0) {
+                continue;
+            }
+            $products[] = $cartItem;
+        }
+    }
+    $_SESSION['cart'] = $products;
+    header('Location: ../../index.php?quanly=giohang');
+}
 if (!empty($_GET['xoatatca'])) {
     unset($_SESSION['cart']);
     header('Location: ../../index.php?quanly=giohang');

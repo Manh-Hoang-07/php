@@ -1,5 +1,5 @@
 <?php
-$sql_pro = "SELECT * FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id";
+$sql_pro = "SELECT *, tbl_sanpham.id as id, tbl_danhmuc.id as tbl_danhmuc_id FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id";
 $query_pro = mysqli_query($mysqli, $sql_pro);
 ?>
 <h3>Sản phẩm mới nhất</h3>

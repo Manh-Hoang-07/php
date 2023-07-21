@@ -15,6 +15,8 @@
                 include "main/lienhe.php";
             } elseif ($tam == 'sanpham') {
                 include "main/sanpham.php";
+            } elseif ($tam == 'dangky') {
+                include "main/dangky.php";
             } else {
                 include "main/index.php";
             }

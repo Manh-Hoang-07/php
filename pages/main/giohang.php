@@ -26,10 +26,14 @@ session_start();
         <td><?php echo $cartItem['tensanpham'] ?? '' ?></td>
         <td><?php echo $cartItem['masp'] ?? '' ?></td>
         <td><img src="admincp/modules/quanlysp/uploads/<?php echo $cartItem['hinhanh'] ?? '' ?>" width="40px"></td>
-        <td><?php echo $cartItem['soluong'] ?? '' ?></td>
+        <td>
+            <a href="pages/main/themgiohang.php?tru=<?php echo $cartItem['id'] ?? '' ?>">Trừ</a>
+            <?php echo $cartItem['soluong'] ?? '' ?>
+            <a href="pages/main/themgiohang.php?cong=<?php echo $cartItem['id'] ?? '' ?>">Cộng</a>
+        </td>
         <td><?php echo $cartItem['giasp'] ?? '' ?></td>
         <td><?php echo $thanhtien ?></td>
-        <td><a href="">Xóa</a></td>
+        <td><a href="pages/main/themgiohang.php?xoa=<?php echo $cartItem['id'] ?? '' ?>">Xóa</a></td>
     </tr>
     <?php
     }

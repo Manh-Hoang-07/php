@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (empty($_SESSION['taikhoan'])) {
+    header("Location: login.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
