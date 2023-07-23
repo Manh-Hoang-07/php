@@ -1,5 +1,6 @@
 <?php
 if (isset($_POST['dangky'])) {
+    session_start();
     $tenkhachhang = $_POST['tenkhachhang'] ?? '';
     $email = $_POST['email'] ?? '';
     $diachi = $_POST['diachi'] ?? '';
@@ -9,6 +10,8 @@ if (isset($_POST['dangky'])) {
     $row = mysqli_query($mysqli, $sql);
     if ($row) {
         echo "Đăng ký tài khoản thành công";
+        $_SESSION['dangky'] = $tenkhachhang;
+        header("Location: index.php?quanly=giohang");
     }
 }
 ?>

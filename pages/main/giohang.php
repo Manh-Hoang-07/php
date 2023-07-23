@@ -1,8 +1,13 @@
-<p>Giỏ hàng</p>
 <?php
 session_start();
 ?>
-
+<p>Giỏ hàng
+<?php
+if (isset($_SESSION['dangky'])) {
+    echo 'Xin chào: ' . $_SESSION['dangky'];
+}
+?>
+</p>
 <table border="1">
     <tr>
         <th>Id</th>
@@ -41,6 +46,19 @@ session_start();
         <tr>
             <td>Tổng tiền: <?php echo $tongtien;?></td>
             <td><p><a href="pages/main/themgiohang.php?xoatatca=1">Xóa tất cả</a></p></td>
+            <div class="clear">
+                <?php
+                if (isset($_SESSION['dangky'])) {
+                ?>
+                    <p><a href="index.php?quanly=thanhtoan">Đặt hàng</a></p>
+                <?php
+                } else {
+                ?>
+                    <p><a href="index.php?quanly=dangky">Đăng ký đặt hàng</a></p>
+                <?php
+                }
+                ?>
+            </div>
         </tr>
 
     <?php

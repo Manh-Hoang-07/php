@@ -17,6 +17,8 @@
                 include "main/sanpham.php";
             } elseif ($tam == 'dangky') {
                 include "main/dangky.php";
+            } elseif ($tam == 'thanhtoan') {
+                include "main/thanhtoan.php";
             } else {
                 include "main/index.php";
             }
