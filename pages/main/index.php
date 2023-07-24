@@ -1,5 +1,11 @@
 <?php
-$sql_pro = "SELECT *, tbl_sanpham.id as id, tbl_danhmuc.id as tbl_danhmuc_id FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id";
+$page = $_GET['trang'] ?? 1;
+if ($page == 1) {
+    $begin = 0;
+} else {
+    $begin = ($page*2) - 1;
+}
+$sql_pro = "SELECT *, tbl_sanpham.id as id, tbl_danhmuc.id as tbl_danhmuc_id FROM tbl_sanpham,tbl_danhmuc WHERE tbl_sanpham.id_danhmuc=tbl_danhmuc.id LIMIT $begin,2";
 $query_pro = mysqli_query($mysqli, $sql_pro);
 ?>
 <h3>Sản phẩm mới nhất</h3>
@@ -32,9 +38,19 @@ $query_pro = mysqli_query($mysqli, $sql_pro);
             margin: 5px;
         }
     </style>
+    <?php
+    $sql_trang = mysqli_query($mysqli, "SELECT * FROM tbl_sanpham");
+    $count = mysqli_num_rows($sql_trang);
+    $trang = ceil($count/2);
+    ?>
+    <p>Trang hiện tại: <?php echo $page; ?>/<?php echo $trang; ?></p>
     <ul class="list-trang">
-        <li><a href="">1</a></li>
-        <li><a href="">2</a></li>
-        <li><a href="">3</a></li>
+        <?php
+        for ($i = 1; $i <= $trang ; $i++) {
+        ?>
+            <li><a <?php if ($page == $i) { ?> style="color: red;" <?php } ?> href="index.php?trang=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+        <?php
+        }
+        ?>
     </ul>
 </div>
