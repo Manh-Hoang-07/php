@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <p>Giỏ hàng
 <?php
 if (isset($_SESSION['dangky'])) {

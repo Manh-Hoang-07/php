@@ -11,6 +11,7 @@ if (isset($_POST['dangky'])) {
     if ($row) {
         echo "Đăng ký tài khoản thành công";
         $_SESSION['dangky'] = $tenkhachhang;
+        $_SESSION['id_khachhang'] = mysqli_insert_id($mysqli);
         header("Location: index.php?quanly=giohang");
     }
 }
