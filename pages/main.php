@@ -25,6 +25,8 @@
                 include "main/timkiem.php";
             } elseif ($tam == 'camon') {
                 include "main/camon.php";
+            } elseif ($tam == 'doimatkhau') {
+                include "main/doimatkhau.php";
             } else {
                 include "main/index.php";
             }

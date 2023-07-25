@@ -28,6 +28,7 @@ if (isset($_SESSION['dangky'])
         if (isset($_SESSION['dangky'])) {
             ?>
             <li><a href="index.php?quanly=dangxuat">Đăng xuất</a></li>
+            <li><a href="index.php?quanly=doimatkhau">Đổi mật khẩu</a></li>
             <?php
         } else {
             ?>
