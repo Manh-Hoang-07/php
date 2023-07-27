@@ -9,5 +9,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'dangxuat') {
     <li><a href="index.php?action=quanlysanpham&query=them">Quản lý sản phẩm</a></li>
     <li><a href="index.php?action=quanlydanhmucbaiviet">Quản lý danh mục bài viết</a></li>
     <li><a href="index.php?action=quanlybaiviet">Quản lý bài viết</a></li>
+    <li><a href="index.php?action=quanlydonhang">Quản lý đơn hàng</a></li>
     <li><a href="index.php?action=dangxuat">Đăng xuất</a></li>
 </ul>

@@ -13,6 +13,10 @@ if ($tam == 'quanlydanhmucsanpham' && $query == 'them') {
     include "quanlysp/lietke.php";
 }elseif ($tam == 'quanlysanpham' && $query == 'sua') {
     include "quanlysp/sua.php";
+}elseif ($tam == 'quanlydonhang') {
+    include "quanlydonhang/lietke.php";
+}elseif ($tam == 'donhang' && $query='xemdonhang') {
+    include "quanlydonhang/xemdonhang.php";
 } else {
     include "dashboard.php";
 }
